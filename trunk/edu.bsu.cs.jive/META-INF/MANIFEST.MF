@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Jive Model Plug-in
+Bundle-SymbolicName: edu.bsu.cs.jive
+Bundle-Version: 0.3.1.v20080417
+Bundle-Vendor: University at Buffalo
+Require-Bundle: org.eclipse.jdt.debug
+Eclipse-LazyStart: true
+Export-Package: edu.bsu.cs.jive.contour,
+ edu.bsu.cs.jive.contour.impl,
+ edu.bsu.cs.jive.contour.java,
+ edu.bsu.cs.jive.contour.java.impl,
+ edu.bsu.cs.jive.contour.jivelog_adapter,
+ edu.bsu.cs.jive.events,
+ edu.bsu.cs.jive.events.impl,
+ edu.bsu.cs.jive.runtime,
+ edu.bsu.cs.jive.runtime.builders,
+ edu.bsu.cs.jive.util,
+ edu.buffalo.cse.jive.sequence,
+ edu.buffalo.cse.jive.sequence.impl,
+ edu.buffalo.cse.jive.sequence.java,
+ edu.buffalo.cse.jive.sequence.java.impl,
+ edu.buffalo.cse.jive.sequence.jivelog_adapter
+Bundle-RequiredExecutionEnvironment: J2SE-1.5

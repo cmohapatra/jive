@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: JDI Debug Model Adapter
+Bundle-SymbolicName: edu.buffalo.cse.jive.core.adapter
+Bundle-Version: 0.1.1.v20071113
+Bundle-Vendor: University at Buffalo
+Fragment-Host: org.eclipse.jdt.debug;bundle-version="3.3.0"
+Export-Package: org.eclipse.jdt.internal.debug.core.model
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
