@@ -2,7 +2,7 @@
 <feature
       id="edu.buffalo.cse.jive"
       label="JIVE Platform"
-      version="0.3.1.v20080417"
+      version="0.4.0.v20091028b"
       provider-name="University at Buffalo">
 
    <description url="http://www.cse.buffalo.edu/jive">
@@ -10,7 +10,7 @@
    </description>
 
    <copyright>
-      Copyright © 2007 University at Buffalo, The State University
+      Copyright © 2007-09 University at Buffalo, The State University
 of New York.  All rights reserved.
    </copyright>
 
@@ -108,10 +108,7 @@ This Agreement is governed by the laws of the State of New York and the intellec
    </url>
 
    <requires>
-      <import plugin="org.apache.commons.logging"/>
-      <import plugin="org.apache.log4j"/>
       <import plugin="org.eclipse.jdt.debug"/>
-      <import plugin="org.apache.bcel"/>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.debug.core"/>
       <import plugin="org.eclipse.jdt.debug" version="3.3.0" match="greaterOrEqual"/>
@@ -133,21 +130,21 @@ This Agreement is governed by the laws of the State of New York and the intellec
          id="edu.bsu.cs.jive"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="0.4.0.v20091028b"
          unpack="false"/>
 
    <plugin
          id="edu.buffalo.cse.jive.core"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="0.4.0.v20091028b"
          unpack="false"/>
 
    <plugin
          id="edu.buffalo.cse.jive.core.adapter"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="0.4.0.v20091028b"
          fragment="true"
          unpack="false"/>
 
@@ -155,26 +152,14 @@ This Agreement is governed by the laws of the State of New York and the intellec
          id="edu.buffalo.cse.jive.launching"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="0.4.0.v20091028b"
          unpack="false"/>
 
    <plugin
          id="edu.buffalo.cse.jive.ui"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="0.4.0.v20091028b"
          unpack="false"/>
-
-   <plugin
-         id="org.apache.bcel"
-         download-size="0"
-         install-size="0"
-         version="5.1.0"/>
-
-   <plugin
-         id="org.apache.log4j"
-         download-size="0"
-         install-size="0"
-         version="1.2.13"/>
 
 </feature>

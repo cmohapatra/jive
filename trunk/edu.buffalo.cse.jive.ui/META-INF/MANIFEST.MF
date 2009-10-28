@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: edu.buffalo.cse.jive.ui;singleton:=true
-Bundle-Version: 0.3.0.v20080303
+Bundle-Version: 0.4.0.v20091028b
 Bundle-Activator: edu.buffalo.cse.jive.internal.ui.JiveUIPlugin
 Bundle-Vendor: %pluginProvider
 Bundle-Localization: plugin
