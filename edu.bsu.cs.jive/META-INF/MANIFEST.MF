@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Jive Model Plug-in
 Bundle-SymbolicName: edu.bsu.cs.jive
-Bundle-Version: 0.3.1.v20080417
+Bundle-Version: 0.4.0.v20091028b
 Bundle-Vendor: University at Buffalo
 Require-Bundle: org.eclipse.jdt.debug
 Eclipse-LazyStart: true

@@ -27,6 +27,9 @@
    <feature url="features/edu.buffalo.cse.jive_0.3.1.v20080417.jar" id="edu.buffalo.cse.jive" version="0.3.1.v20080417">
       <category name="JIVE"/>
    </feature>
+   <feature url="features/edu.buffalo.cse.jive_0.3.4.v20091028b.jar" id="edu.buffalo.cse.jive" version="0.3.4.v20091028b">
+      <category name="JIVE"/>
+   </feature>
    <category-def name="JIVE" label="JIVE Features">
       <description>
          This category contains all the JIVE features.
