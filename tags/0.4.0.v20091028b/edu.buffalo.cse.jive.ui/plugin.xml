@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension-point id="searchPages" name="JIVE Search Pages" schema="schema/searchPages.exsd"/>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTabs">
+      <tab
+            class="edu.buffalo.cse.jive.ui.launchConfig.JiveTab"
+            group="org.eclipse.jdt.debug.ui.launchConfigurationTabGroup.localJavaApplication"
+            id="edu.buffalo.cse.jive.ui.jiveTabJavaApplication"
+            name="%jiveTabJavaApplication">
+         <placement
+               after="org.eclipse.jdt.debug.ui.javaArgumentsTab">
+         </placement>
+      </tab>
+      <tab
+            class="edu.buffalo.cse.jive.ui.launchConfig.JiveTab"
+            group="org.eclipse.jdt.debug.ui.launchConfigurationTabGroup.javaApplet"
+            id="edu.buffalo.cse.jive.ui.jiveTabJavaApplet"
+            name="%jiveTabJavaApplet">
+         <placement
+               after="org.eclipse.jdt.debug.ui.javaArgumentsTab">
+         </placement>
+      </tab>
+      <tab
+            class="edu.buffalo.cse.jive.ui.launchConfig.JiveTab"
+            group="org.eclipse.jdt.junit.launchConfigurationTabGroup.junit"
+            id="edu.buffalo.cse.jive.ui.jiveTabJUnitTest"
+            name="%jiveTabJUnitTest">
+         <placement
+               after="org.eclipse.jdt.debug.ui.javaArgumentsTab">
+         </placement>
+      </tab>
+   </extension>
+   <extension
+         id="edu.buffalo.cse.jive.ui.jivePerspectives"
+         name="JIVE"
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="edu.buffalo.cse.jive.internal.ui.JivePerspectiveFactory"
+            fixed="false"
+            icon="icons/general/enabled/jive.gif"
+            id="edu.buffalo.cse.jive.ui.jivePerspective"
+            name="JIVE">
+      </perspective>
+   </extension>
+   <extension
+         id="edu.buffalo.cse.jive.ui.jiveViews"
+         name="JIVE Views"
+         point="org.eclipse.ui.views">
+      <category
+            id="edu.buffalo.cse.jive.ui.jiveCategory"
+            name="JIVE">
+      </category>
+      <view
+            category="edu.buffalo.cse.jive.ui.jiveCategory"
+            class="edu.buffalo.cse.jive.internal.ui.views.eventlog.JiveEventLogView"
+            icon="icons/general/enabled/list.gif"
+            id="edu.buffalo.cse.jive.ui.eventLogView"
+            name="Event Log">
+      </view>
+      <view
+            category="edu.buffalo.cse.jive.ui.jiveCategory"
+            class="edu.buffalo.cse.jive.internal.ui.views.contour.model.ContourModelView"
+            icon="icons/general/enabled/tree.gif"
+            id="edu.buffalo.cse.jive.ui.contourModelView"
+            name="Contour Model">
+      </view>
+      <view
+            category="edu.buffalo.cse.jive.ui.jiveCategory"
+            class="edu.buffalo.cse.jive.internal.ui.views.sequence.model.SequenceModelView"
+            icon="icons/general/enabled/tree.gif"
+            id="edu.buffalo.cse.jive.ui.sequenceModelView"
+            name="Sequence Model">
+      </view>
+      <view
+            category="edu.buffalo.cse.jive.ui.jiveCategory"
+            class="edu.buffalo.cse.jive.internal.ui.views.contour.diagram.ContourDiagramView"
+            id="edu.buffalo.cse.jive.ui.contourDiagramView"
+            name="Object Diagram">
+      </view>
+      <view
+            category="edu.buffalo.cse.jive.ui.jiveCategory"
+            class="edu.buffalo.cse.jive.internal.ui.views.sequence.diagram.SequenceDiagramView"
+            id="edu.buffalo.cse.jive.ui.sequenceDiagramView"
+            name="Sequence Diagram">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.search.searchPages">
+      <page
+            class="edu.buffalo.cse.jive.internal.ui.search.JiveSearchPageProxy"
+            extensions="java:90, jav:90"
+            icon="icons/search/enabled/search.gif"
+            id="edu.buffalo.cse.jive.ui.jiveSearchPage"
+            label="JIVE Search">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.search.searchResultViewPages">
+      <viewPage
+            class="edu.buffalo.cse.jive.internal.ui.search.JiveSearchResultPage"
+            icon="icons/search/enabled/search.gif"
+            id="edu.buffalo.cse.jive.internal.ui.search.jiveSearchResultPage"
+            searchResultClass="edu.buffalo.cse.jive.ui.search.JiveSearchResult">
+      </viewPage>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.ui.resourcePerspective">
+         <perspectiveShortcut
+               id="edu.buffalo.cse.jive.ui.jivePerspective">
+         </perspectiveShortcut>
+      </perspectiveExtension>
+      <perspectiveExtension
+            targetID="org.eclipse.debug.ui.DebugPerspective">
+         <perspectiveShortcut
+               id="edu.buffalo.cse.jive.ui.jivePerspective">
+         </perspectiveShortcut>
+      </perspectiveExtension>
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <perspectiveShortcut
+               id="edu.buffalo.cse.jive.ui.jivePerspective">
+         </perspectiveShortcut>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="edu.buffalo.cse.jive.ui.preferences.RootPreferencePage"
+            id="edu.buffalo.cse.jive.ui.preferences.RootPreferencePage"
+            name="JIVE">
+      </page>
+      <page
+            category="edu.buffalo.cse.jive.ui.preferences.RootPreferencePage"
+            class="edu.buffalo.cse.jive.ui.preferences.DefaultEventFiltersPreferencePage"
+            id="edu.buffalo.cse.jive.ui.preferences.DefaultEventFiltersPreferencePage"
+            name="Default Event Filters">
+      </page>
+      <page
+            category="edu.buffalo.cse.jive.ui.preferences.RootPreferencePage"
+            class="edu.buffalo.cse.jive.ui.preferences.SequenceDiagramPreferencePage"
+            id="edu.buffalo.cse.jive.ui.preferences.SequenceDiagramPreferencePage"
+            name="Sequence Diagram">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="edu.buffalo.cse.jive.ui.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+   <extension
+         point="edu.buffalo.cse.jive.ui.searchPages">
+      <page
+            class="edu.buffalo.cse.jive.ui.search.pages.VariableChangedSearchPage"
+            icon="icons/event_log/enabled/events/assign.gif"
+            id="edu.buffalo.cse.jive.ui.variableChangedSearchPage"
+            name="Variable Changed">
+      </page>
+      <page
+            class="edu.buffalo.cse.jive.ui.search.pages.LineExecutedSearchPage"
+            icon="icons/event_log/enabled/events/eos.gif"
+            id="edu.buffalo.cse.jive.ui.lineExecutedSearchPage"
+            name="Line Executed">
+      </page>
+      <page
+            class="edu.buffalo.cse.jive.ui.search.pages.MethodCalledSearchPage"
+            icon="icons/event_log/enabled/events/call.gif"
+            id="edu.buffalo.cse.jive.ui.methodCalledSearchPage"
+            name="Method Called">
+      </page>
+      <page
+            class="edu.buffalo.cse.jive.ui.search.pages.MethodReturnedSearchPage"
+            icon="icons/event_log/enabled/events/return.gif"
+            id="edu.buffalo.cse.jive.ui.methodReturnedSearchPage"
+            name="Method Returned">
+      </page>
+      <page
+            class="edu.buffalo.cse.jive.ui.search.pages.ObjectCreatedSearchPage"
+            icon="icons/event_log/enabled/events/new.gif"
+            id="edu.buffalo.cse.jive.ui.objectCreatedSearchPage"
+            name="Object Created">
+      </page>
+      <page
+            class="edu.buffalo.cse.jive.ui.search.pages.InvariantViolatedSearchPage"
+            icon="icons/search/enabled/invariant_violated.gif"
+            id="edu.buffalo.cse.jive.ui.invariantViolatedSearchPage"
+            name="Invariant Violated">
+      </page>
+      <page
+            class="edu.buffalo.cse.jive.ui.search.pages.ExceptionThrownSearchPage"
+            icon="icons/event_log/enabled/events/throw.gif"
+            id="edu.buffalo.cse.jive.ui.exceptionThrownSearchPage"
+            name="Exception Thrown">
+      </page>
+      <page
+            class="edu.buffalo.cse.jive.ui.search.pages.ExceptionCaughtSearchPage"
+            icon="icons/event_log/enabled/events/catch.gif"
+            id="edu.buffalo.cse.jive.ui.exceptionCaughtSearchPage"
+            name="Exception Caught">
+      </page>
+   </extension>
+</plugin>
