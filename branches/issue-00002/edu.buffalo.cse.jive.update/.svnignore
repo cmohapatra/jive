@@ -1,0 +1,8 @@
+.metadata
+.settings
+bin
+plugins
+plugins/*
+features
+features/*
+
