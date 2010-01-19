@@ -38,7 +38,7 @@ public class JiveThread extends JDIThreadAdapter implements IJiveThread {
 	}
 	
 	public void initialize() {
-	// TODO(jkczyz):  Determine the best way to handles clones.
+	// TODO(jkczyz):  Determine the best way to handle clones.
 //		JiveDebugTarget target = (JiveDebugTarget) getDebugTarget();
 //		if (target.getVM().canGetMethodReturnValues()) {
 //			new CloneMethodExitHandler();
@@ -80,13 +80,6 @@ public class JiveThread extends JDIThreadAdapter implements IJiveThread {
 	 */
 	protected JDTStepHandler getPendingStepHandler() {
 		return (JDTStepHandler) (super.getPendingStepHandler());
-	}
-
-	protected void configureStepRequest() {
-		if (fJiveStepHandler == null) {
-			fJiveStepHandler = new JiveStepHandler();
-			fJiveStepHandler.createRequest();
-		}
 	}
 	
 	protected class JiveStepHandler implements IJDIEventListener {
