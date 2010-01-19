@@ -22,7 +22,6 @@ import com.sun.jdi.VirtualMachine;
 import com.sun.jdi.event.ClassPrepareEvent;
 import com.sun.jdi.event.Event;
 import com.sun.jdi.event.ExceptionEvent;
-import com.sun.jdi.event.LocatableEvent;
 import com.sun.jdi.event.MethodEntryEvent;
 import com.sun.jdi.event.MethodExitEvent;
 import com.sun.jdi.event.ModificationWatchpointEvent;
@@ -355,10 +354,6 @@ public class JiveDebugTarget extends JDIDebugTargetAdapter implements IJiveDebug
 		}
 		
 		public boolean handleEvent(Event event, JDIDebugTarget target) {
-			ThreadReference thread = ((LocatableEvent) event).thread();
-			JiveThread jiveThread = (JiveThread) findThread(thread);
-			jiveThread.configureStepRequest();
-			
 			fEventAdapter.handleMethodEntry((MethodEntryEvent) event);
 			return true;
 		}
