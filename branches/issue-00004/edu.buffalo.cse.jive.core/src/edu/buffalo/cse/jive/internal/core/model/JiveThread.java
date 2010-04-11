@@ -233,57 +233,60 @@ public class JiveThread extends JDIThreadAdapter implements IJiveThread {
 	 * @see org.eclipse.jdt.internal.debug.core.model.JDIThread#stepInto()
 	 */
 	@Override
-	public synchronized void stepInto() throws DebugException {
-		if (!canStepInto()) {
-			return;
-		}
-		else {
-			JDTStepHandler handler = new StepIntoHandler();
-			handler.step();
+	public void stepInto() throws DebugException {
+		synchronized (this) {
+			if (!canStepInto()) {
+				return;
+			}
 		}
 		
+		JDTStepHandler handler = new StepIntoHandler();
+		handler.step();
 	}
 
 	/* (non-Javadoc)
 	 * @see org.eclipse.jdt.internal.debug.core.model.JDIThread#stepOver()
 	 */
 	@Override
-	public synchronized void stepOver() throws DebugException {
-		if (!canStepOver()) {
-			return;
+	public void stepOver() throws DebugException {
+		synchronized (this) {
+			if (!canStepOver()) {
+				return;
+			}
 		}
-		else {
-			JDTStepHandler handler = new StepOverHandler();
-			handler.step();
-		}
+		
+		JDTStepHandler handler = new StepOverHandler();
+		handler.step();
 	}
 
 	/* (non-Javadoc)
 	 * @see org.eclipse.jdt.internal.debug.core.model.JDIThread#stepReturn()
 	 */
 	@Override
-	public synchronized void stepReturn() throws DebugException {
-		if (!canStepReturn()) {
-			return;
+	public void stepReturn() throws DebugException {
+		synchronized (this) {
+			if (!canStepReturn()) {
+				return;
+			}
 		}
-		else {
-			JDTStepHandler handler = new StepReturnHandler();
-			handler.step();
-		}
+		
+		JDTStepHandler handler = new StepReturnHandler();
+		handler.step();
 	}
 	
 	/* (non-Javadoc)
 	 * @see org.eclipse.jdt.internal.debug.core.model.JDIThread#stepToFrame(org.eclipse.debug.core.model.IStackFrame)
 	 */
 	@Override
-	protected synchronized void stepToFrame(IStackFrame frame) throws DebugException {
-		if (!canStepReturn()) {
-			return;
+	protected void stepToFrame(IStackFrame frame) throws DebugException {
+		synchronized (this) {
+			if (!canStepReturn()) {
+				return;
+			}
 		}
-		else {
-			JDTStepHandler handler = new StepToFrameHandler(frame);
-			handler.step();
-		}
+		
+		JDTStepHandler handler = new StepToFrameHandler(frame);
+		handler.step();
 	}
 	
 	/* (non-Javadoc)
