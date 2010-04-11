@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description url="http://www.cse.buffalo.edu/jive/update">
+      JIVE Update Site
+   </description>
+   <feature url="features/edu.buffalo.cse.jive_0.1.0.v20071020.jar" id="edu.buffalo.cse.jive" version="0.1.0.v20071020">
+      <category name="JIVE"/>
+   </feature>
+   <feature url="features/edu.buffalo.cse.jive_0.1.1.v20071113.jar" id="edu.buffalo.cse.jive" version="0.1.1.v20071113">
+      <category name="JIVE"/>
+   </feature>
+   <feature url="features/edu.buffalo.cse.jive_0.1.2.v20071114.jar" id="edu.buffalo.cse.jive" version="0.1.2.v20071114">
+      <category name="JIVE"/>
+   </feature>
+   <feature url="features/edu.buffalo.cse.jive_0.2.0.v20071121.jar" id="edu.buffalo.cse.jive" version="0.2.0.v20071121">
+      <category name="JIVE"/>
+   </feature>
+   <feature url="features/edu.buffalo.cse.jive_0.2.1.v20071215.jar" id="edu.buffalo.cse.jive" version="0.2.1.v20071215">
+      <category name="JIVE"/>
+   </feature>
+   <feature url="features/edu.buffalo.cse.jive_0.2.2.v20080116.jar" id="edu.buffalo.cse.jive" version="0.2.2.v20080116">
+      <category name="JIVE"/>
+   </feature>
+   <feature url="features/edu.buffalo.cse.jive_0.3.0.v20080303.jar" id="edu.buffalo.cse.jive" version="0.3.0.v20080303">
+      <category name="JIVE"/>
+   </feature>
+   <feature url="features/edu.buffalo.cse.jive_0.3.1.v20080417.jar" id="edu.buffalo.cse.jive" version="0.3.1.v20080417">
+      <category name="JIVE"/>
+   </feature>
+   <feature url="features/edu.buffalo.cse.jive_0.3.4.v20091028b.jar" id="edu.buffalo.cse.jive" version="0.3.4.v20091028b">
+      <category name="JIVE"/>
+   </feature>
+   <category-def name="JIVE" label="JIVE Features">
+      <description>
+         This category contains all the JIVE features.
+      </description>
+   </category-def>
+</site>

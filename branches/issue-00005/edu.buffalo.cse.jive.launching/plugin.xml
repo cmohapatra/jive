@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.debug.core.launchDelegates">
+      <launchDelegate
+            delegate="edu.buffalo.cse.jive.internal.launching.LocalJavaApplicationLaunchDelegate"
+            id="edu.buffalo.cse.jive.launching.localJavaApplication"
+            name="%localJavaApplicationLaunchDelegate"
+            type="org.eclipse.jdt.launching.localJavaApplication">
+         <modeCombination
+               modes="debug, jive"
+               perspective="edu.buffalo.cse.jive.ui.jivePerspective">
+         </modeCombination>
+      </launchDelegate>
+      <launchDelegate
+            delegate="org.eclipse.jdt.launching.JavaLaunchDelegate"
+            id="edu.buffalo.cse.jive.launching.localJavaApplicationProxy"
+            name="%localJavaApplicationLaunchDelegateProxy"
+            type="org.eclipse.jdt.launching.localJavaApplication">
+         <modeCombination
+               modes="run, jive">
+         </modeCombination>
+      </launchDelegate>
+      <launchDelegate
+            delegate="edu.buffalo.cse.jive.internal.launching.JavaAppletLaunchDelegate"
+            id="edu.buffalo.cse.jive.launching.javaApplet"
+            name="%javaAppletLaunchDelegate"
+            type="org.eclipse.jdt.launching.javaApplet">
+         <modeCombination
+               modes="debug, jive"
+               perspective="edu.buffalo.cse.jive.ui.jivePerspective">
+         </modeCombination>
+      </launchDelegate>
+      <launchDelegate
+            delegate="org.eclipse.jdt.internal.launching.JavaAppletLaunchConfigurationDelegate"
+            id="edu.buffalo.cse.jive.launching.javaAppletProxy"
+            name="%javaAppletLaunchDelegateProxy"
+            type="org.eclipse.jdt.launching.javaApplet">
+         <modeCombination
+               modes="run, jive">
+         </modeCombination>
+      </launchDelegate>
+      <launchDelegate
+            delegate="edu.buffalo.cse.jive.internal.launching.JUnitLaunchDelegate"
+            id="edu.buffalo.cse.jive.launching.junitTest"
+            name="%junitTestLaunchDelegate"
+            type="org.eclipse.jdt.junit.launchconfig">
+         <modeCombination
+               modes="debug, jive"
+               perspective="edu.buffalo.cse.jive.ui.jivePerspective">
+         </modeCombination>
+      </launchDelegate>
+      <launchDelegate
+            delegate="org.eclipse.jdt.junit.launcher.JUnitLaunchConfigurationDelegate"
+            id="edu.buffalo.cse.jive.launching.junitTestProxy"
+            name="%junitTestLaunchDelegateProxy"
+            type="org.eclipse.jdt.junit.launchconfig">
+         <modeCombination
+               modes="run, jive">
+         </modeCombination>
+      </launchDelegate>
+   </extension>
+
+</plugin>
