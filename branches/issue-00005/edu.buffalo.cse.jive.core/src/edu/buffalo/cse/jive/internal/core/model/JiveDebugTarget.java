@@ -221,18 +221,38 @@ public class JiveDebugTarget extends JDIDebugTargetAdapter implements IJiveDebug
 			super();
 		}
 		
+		protected void createRequest() {
+			EventRequestManager manager = getEventRequestManager();
+			if (manager != null) {			
+				try {
+					EventRequest request = manager.createThreadStartRequest();
+					request.setSuspendPolicy(EventRequest.SUSPEND_EVENT_THREAD);
+					request.enable();
+					addJDIEventListener(this, request);
+					setRequest(request);
+				} catch (RuntimeException e) {
+					logError(e);
+				}
+			}
+		}
+		
 		public boolean handleEvent(Event event, JDIDebugTarget target) {
-			// TODO Determine if this is needed; if so, move to newThread()
-//			ThreadReference thread = ((ThreadStartEvent) event).thread();
-//			ThreadGroupReference group = thread.threadGroup();
-//			
-//			if (group != null && !group.name().equals("system")) {
-//				JiveThread jiveThread = (JiveThread) findThread(thread);
-//				jiveThread.configureNextStepRequest();
-//			}
-			
 			fEventAdapter.handleThreadStart((ThreadStartEvent) event);
 			return super.handleEvent(event, target);
+		}
+		
+		public void wonSuspendVote(Event event, JDIDebugTarget target) {
+			super.wonSuspendVote(event, target);
+			ThreadReference thread = ((ThreadStartEvent) event).thread();
+			JDIThread jdiThread = findThread(thread);
+			if (jdiThread.isSuspended()) {
+				try {
+					jdiThread.resume();
+				}
+				catch (DebugException exception) {
+					logError(exception);
+				}
+			}
 		}
 	}
 	
